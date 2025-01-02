@@ -5,10 +5,13 @@
 ```
 'python main.py {путь до файла excel с категориями, названиями, сортами, ценами вин, названиями картинок для сайта и наличием акций}'
 ```
+![image](https://github.com/user-attachments/assets/b157d4f1-4c71-42d0-95c5-b9b0356a40fc)
+
 Так же, при наличии файла .env с указанным по умолчанию путем до файла(см. раздел "Как установить"), можем ввести в терминал:
 ```
 'python main.py'
 ``` 
+![image](https://github.com/user-attachments/assets/36aaa65f-c590-45dc-be2c-ad781dd1df12)
 
 Запускаем файл 'index.html'
 
