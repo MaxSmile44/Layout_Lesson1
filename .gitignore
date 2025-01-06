@@ -8,6 +8,7 @@ __pycache__/
 .replit
 index.html
 wine.xlsx
+wine3.xlsx
 
 # C extensions
 *.so
