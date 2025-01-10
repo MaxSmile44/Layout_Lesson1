@@ -53,9 +53,8 @@ def main():
     parser = argparse.ArgumentParser(description='Updates wine data on website from excel file')
     parser.add_argument('-p', '--path', default=path, help='Print path to excel file')
     args = parser.parse_args()
-    path = args.path
-    
-    rendered_page = update_page(get_age(), get_wines_info(path))
+
+    rendered_page = update_page(get_age(), get_wines_info(args.path))
     with open('index.html', 'w', encoding="utf8") as file:
         file.write(rendered_page)
 
