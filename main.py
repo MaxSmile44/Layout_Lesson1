@@ -22,11 +22,7 @@ def get_age():
     return f'{winery_age} {year_name}'
 
 def get_wines_info(path):
-    parser = argparse.ArgumentParser(description='Updates wine data on website from excel file')
-    parser.add_argument('-p', '--path', default=path, help='Print path to excel file')
-    args = parser.parse_args()
-
-    excel_wines_df = pandas.read_excel(io=args.path)
+    excel_wines_df = pandas.read_excel(io=path)
     excel_wines_df = excel_wines_df.fillna('')
     wines = excel_wines_df.to_dict(orient='records')
 
@@ -53,6 +49,12 @@ def update_page(age, wines_info):
 def main():
     load_dotenv()
     path = os.getenv('FILE_PATH')
+
+    parser = argparse.ArgumentParser(description='Updates wine data on website from excel file')
+    parser.add_argument('-p', '--path', default=path, help='Print path to excel file')
+    args = parser.parse_args()
+    path = args.path
+    
     rendered_page = update_page(get_age(), get_wines_info(path))
     with open('index.html', 'w', encoding="utf8") as file:
         file.write(rendered_page)
